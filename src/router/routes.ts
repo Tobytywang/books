@@ -6,6 +6,18 @@ const routes = [
         component: () => import('../components/HelloWorld.vue'),
     },
     {
+        path: '/random',
+        name: 'random',
+        title: '试试手气',
+        component: () => import('../components/HelloWorld.vue'),
+    },
+    {
+        path: '/current',
+        name: 'current',
+        title: '当前在读',
+        component: () => import('../components/HelloWorld.vue'),
+    },
+    {
         path: '/program',
         name: 'program',
         title: '编程',

@@ -1,5 +1,7 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <div>
+    <h1>{{ msg }}</h1>
+  </div>
 
   <!-- <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
@@ -29,10 +31,22 @@
 </style>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive, ref, onUpdated, onMounted } from 'vue'
+import router from '../router';
 
-defineProps<{ msg: string }>()
-
-const count = ref(0)
+defineProps<{ msg: string }>();
+let msg = ref<string>('HelloW');
+onMounted (() => {
+  changeMsg();
+  console.log('onMounted');
+})
+onUpdated (() => {
+  changeMsg();
+  console.log('onUpdated');
+})
+const changeMsg=()=>{
+  msg.value = router.currentRoute.value.path;
+  console.log(msg);
+}
 </script>
   

@@ -23,22 +23,36 @@
             <span>所有图书</span>
           </template>
         </el-menu-item>
-        <el-menu-item index="/program">
-          <el-icon><icon-menu /></el-icon>
-          <span>编程语言</span>
-        </el-menu-item>
-        <el-menu-item index="/economy">
-          <el-icon><document /></el-icon>
-          <span>经济</span>
-        </el-menu-item>
-        <el-menu-item index="/building">
+        <el-menu-item index="/random">
           <el-icon><setting /></el-icon>
-          <span>建筑</span>
+          <span>试试手气</span>
         </el-menu-item>
-        <el-menu-item index="/history">
+        <el-menu-item index="/current">
           <el-icon><setting /></el-icon>
-          <span>历史</span>
+          <span>当前在读</span>
         </el-menu-item>
+        <el-sub-menu index="/type">
+          <template #title>
+            <el-icon><location /></el-icon>
+            <span>分类</span>
+          </template>
+          <el-menu-item index="/program">
+            <el-icon><icon-menu /></el-icon>
+            <span>编程语言</span>
+          </el-menu-item>
+          <el-menu-item index="/economy">
+            <el-icon><document /></el-icon>
+            <span>经济</span>
+          </el-menu-item>
+          <el-menu-item index="/building">
+            <el-icon><setting /></el-icon>
+            <span>建筑</span>
+          </el-menu-item>
+          <el-menu-item index="/history">
+            <el-icon><setting /></el-icon>
+            <span>历史</span>
+          </el-menu-item>
+        </el-sub-menu>
       </el-menu>
       </el-aside>
       <el-container>
@@ -107,7 +121,7 @@
 }
 </style>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
