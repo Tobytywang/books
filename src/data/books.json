@@ -1,49 +1,49 @@
 {
     "books": [
         {
-            "name": "《图书AAA》",
+            "name": "《编程》",
             "author": "张三",
             "publish": "人民出版社",
             "words": "7万字",
             "type": "program"
         },
         {
-            "name": "《图书A》",
+            "name": "《经济》",
             "author": "张三",
             "publish": "人民出版社",
             "words": "7万字",
             "type": "economy"
         },
         {
-            "name": "《图书A》",
+            "name": "《建筑》",
             "author": "张三",
             "publish": "人民出版社",
             "words": "7万字",
             "type": "building"
         },
         {
-            "name": "《图书A》",
+            "name": "《历史》",
             "author": "张三",
             "publish": "人民出版社",
             "words": "7万字",
             "type": "history"
         },
         {
-            "name": "《图书A》",
+            "name": "《历史的天空》",
             "author": "张三",
             "publish": "人民出版社",
             "words": "7万字",
             "type": "history"
         },
         {
-            "name": "《图书A》",
+            "name": "《历史的大地》",
             "author": "张三",
             "publish": "人民出版社",
             "words": "7万字",
             "type": "history"
         },
         {
-            "name": "《图书A》",
+            "name": "《历史的海洋》",
             "author": "张三",
             "publish": "人民出版社",
             "words": "7万字",

@@ -2,7 +2,7 @@
     <!-- <p>hello</p> -->
     <el-row>
         <el-col
-            v-for="(book, index) in $store.state.books"
+            v-for="(book, index) in books.books"
             :key="book"
             :xs="12"
             :sm="12"
@@ -29,7 +29,6 @@
 </template>
 
 <style scoped>
-
 .el-col {
     margin-bottom: 20px;
     padding-left: 10px;
@@ -48,9 +47,22 @@
 
 <script setup lang="ts">
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+import { reactive, onMounted, onUpdated } from 'vue';
+import { toRaw } from '@vue/reactivity'
 
+const router = useRouter();
+// console.log(router.currentRoute.value.path)
 const store = useStore()
-
+const books = store.getters.getSpecificTypeBooks(router.currentRoute.value.path)
+const state = reactive({books: router.currentRoute.value.path})
+console.log(state)
+onUpdated (() => {
+    const books = toRaw(store.getters.getSpecificTypeBooks(router.currentRoute.value.path))
+    console.log(toRaw(books.books))
+    console.log(state)
+})
+// console.log(typeof(store))
 // mounted = {
 //     store.dispatch()
 // }

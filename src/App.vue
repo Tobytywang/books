@@ -44,7 +44,7 @@
       <el-container>
         <!-- <el-header class="top-head">头</el-header> -->
         <el-main class="top-main">
-          <router-view :msg="msg"> </router-view>
+          <router-view :msg="msg" :key="router.currentRoute.value.fullPath"> </router-view>
         </el-main>
         <el-footer class="top-footer">
           <p>Designed & Powered by tobytywang</p>
@@ -118,8 +118,9 @@ import {
   Setting,
 } from '@element-plus/icons-vue'
 import { watch, reactive } from 'vue';
-import { useRouter, onBeforeRouteUpdate } from 'vue-router'
+import { useRouter, onBeforeRouteUpdate, stringifyQuery } from 'vue-router'
 import router from './router';
+import { keyBy } from 'lodash';
 
 const msg = 'Hello'
 const url = 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'
@@ -129,7 +130,8 @@ watch(
   () => router.currentRoute.value,
   () => {
     console.log("路由变化了")
-    console.log(router.currentRoute.value)
+    console.log(router.currentRoute.value.path)
+    // console.log(router.currentRoute.value)
   }
 )
 
